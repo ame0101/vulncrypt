@@ -105,6 +105,17 @@ To test predictions on an example file:
 python src/model/predict.py src/model/some_code.c
 ```
 
+## Progress and Next Steps
+The confusion matrix shows strong classification performance, correctly identifying 6,083 "good" functions while minimizing false positives (only 17 misclassified). However, 1,370 "bad" functions were misclassified as "good," indicating room for improvement in detecting security vulnerabilities. To enhance accuracy, I have integrated SARD C code datasets into the training set, expanding the diversity of vulnerability patterns the model learns. This expansion aims to reduce false negatives and improve generalization across real-world insecure code structures.
+
+<img width="465" alt="Screenshot 2024-12-18 at 1 58 48 PM" src="https://github.com/user-attachments/assets/bf774bf8-c9aa-4f44-8117-28b359b7455a" />
+
+
+To further improve accuracy, I plan to fine-tune the model using data augmentation techniques and additional handcrafted features that better capture vulnerability patterns. Additionally, integrating a confidence-based threshold for uncertain classifications will help reduce misclassifications and prioritize high-risk code for manual review.
+
+This project is crucial for automating vulnerability detection in C code, helping developers and security researchers identify insecure patterns early, reducing the risk of exploitable security flaws in software.
+
+
 ## Contribution
 
 Contributions are welcome! Feel free to fork this repository, create a feature branch, and submit pull requests. Please ensure your code adheres to the project structure and passes all tests.
